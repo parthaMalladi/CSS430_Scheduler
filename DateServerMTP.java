@@ -7,8 +7,11 @@ public class DateServerMTP
 {
     public static void main(String[] args)
     {
+        int port;
+        port = Integer.parseInt(args[0]);
+
         try {
-            ServerSocket sock = new ServerSocket(6013);
+            ServerSocket sock = new ServerSocket(port);
             ExecutorService threadExecutor = Executors.newCachedThreadPool();
 
             while (true) {

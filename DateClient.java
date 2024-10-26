@@ -4,7 +4,7 @@
 import java.net.*;
 import java.io.*;
 
-public class DateClient430
+public class DateClient
 {
     public static void main(String[] args)
     {
