@@ -34,18 +34,15 @@ class Worker implements Runnable {
     public void run() {
         try
         {
-            while (true)
+            PrintWriter pout = new PrintWriter(client.getOutputStream(), true);
+
+            try
             {
-                PrintWriter pout = new PrintWriter(client.getOutputStream(), true);
-		try
-		{
-		    Thread.sleep(5000);
-		}
-		catch (InterruptedException e) {}
-                pout.println(new java.util.Date().toString());
-                client.close();
-            }
-        }
-        catch (IOException ie) {}
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {}
+            
+            pout.println(new java.util.Date().toString());
+            client.close();
+        } catch (IOException ie) {}
     }
 }
